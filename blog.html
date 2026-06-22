@@ -16,7 +16,6 @@
       min-height: 100vh;
     }
 
-    /* ── Nav ── */
     nav {
       background: #13083E;
       padding: 0 2rem;
@@ -44,7 +43,6 @@
     }
     .nav-links a:hover, .nav-links a.active { color: #fff; }
 
-    /* ── Header ── */
     .page-header {
       padding: 4rem 2rem 2rem;
       max-width: 1200px;
@@ -58,7 +56,6 @@
       letter-spacing: -0.02em;
     }
 
-    /* ── Grid ── */
     .blog-grid {
       max-width: 1200px;
       margin: 3rem auto;
@@ -68,7 +65,6 @@
       gap: 2.5rem;
     }
 
-    /* ── Card ── */
     .card {
       display: flex;
       flex-direction: column;
@@ -83,6 +79,8 @@
       box-shadow: 0 8px 24px rgba(19,8,62,0.12);
       transform: translateY(-2px);
     }
+
+    /* Card with photo */
     .card-img {
       width: 100%;
       aspect-ratio: 3/2;
@@ -90,13 +88,41 @@
       display: block;
       background: #f0f0f0;
     }
-    .card-body { padding: 1.25rem 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    /* Card without photo — dark text banner */
+    .card-banner {
+      width: 100%;
+      aspect-ratio: 3/2;
+      background: #13083E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .card-banner-title {
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .card-body {
+      padding: 1.25rem 1.25rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
     .card-title {
       font-size: 1.05rem;
       font-weight: 700;
       line-height: 1.35;
       color: #13083E;
     }
+    /* Hide title in body when banner already shows it */
+    .card-banner + .card-body .card-title { display: none; }
+
     .card-desc {
       font-size: 0.88rem;
       color: #4F4F4F;
@@ -112,7 +138,6 @@
       margin-top: 0.5rem;
     }
 
-    /* ── Footer ── */
     footer {
       text-align: center;
       padding: 3rem 2rem;
@@ -147,137 +172,155 @@
 
   <div class="blog-grid">
 
-    <a class="card" href="post/altercare-a-worldbuilding-workshop-with-beirut-art-centre.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_8fa21fe56eb54bf098cd371fe1d14fa3~mv2.png/v1/fill/w_800,h_533,al_c,q_90/f82aa6_8fa21fe56eb54bf098cd371fe1d14fa3~mv2.png" alt="AlterCare: A Worldbuilding Workshop with Beirut Art Centre" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">AlterCare: A Worldbuilding Workshop with Beirut Art Centre</div>
-        <div class="card-desc">What happens when you treat an ecology, not as a backdrop, but as the engine of a world? At Beirut Art Center, Play Office ran an XR workshop with artist Lara Kobeissi, inviting participants to explore ecologies, worldbuilding, and emerging technologies as one connected creative practice.</div>
-        <div class="card-read">Read more →</div>
-      </div>
-    </a>
-
-    <a class="card" href="post/bringing-nazar-to-cairo-celebrating-lara-kobeissi-s-journey-at-d-caf.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_179aeec864064000bcdebb26b50cf303~mv2.jpg/v1/fill/w_800,h_494,al_c,q_85/f82aa6_179aeec864064000bcdebb26b50cf303~mv2.jpg" alt="Bringing Nazar to Cairo" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Bringing "Nazar" to Cairo: Celebrating Lara Kobeissi's Journey at D-CAF</div>
-        <div class="card-desc">We are excited to support artist Lara Kobeissi as she brings her captivating multisensory performance, Nazar, to the Downtown Contemporary Arts Festival (D-CAF) in Cairo.</div>
-        <div class="card-read">Read more →</div>
-      </div>
-    </a>
+    <!-- ── Posts with local images ── -->
 
     <a class="card" href="post/clay-photogrammetry-animation.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_b17f9a2c172c4db59f26ccc9f5465d1a~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85/f82aa6_b17f9a2c172c4db59f26ccc9f5465d1a~mv2.jpg" alt="Clay > Photogrammetry > Animation" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_79a43b4cb28643b8bad2ab23209699f7_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_79a43b4cb28643b8bad2ab23209699f7_mv2.jpg" alt="Clay Photogrammetry Animation" loading="lazy">
       <div class="card-body">
         <div class="card-title">Clay → Photogrammetry → Animation</div>
-        <div class="card-desc">We hosted a hands-on workshop led by Tom Ward, where participants took a full creative pipeline from physical to digital — all in one session. Clay modelling, 3D scanning with Scaniverse, and animation.</div>
-        <div class="card-read">Read more →</div>
-      </div>
-    </a>
-
-    <a class="card" href="post/in-touch-in-ruin-aspex.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_35c27e057cc941698d646ed84621f477~mv2.jpg/v1/fill/w_800,h_534,al_c,q_85/f82aa6_35c27e057cc941698d646ed84621f477~mv2.jpg" alt="In Touch In Ruin - ASPEX" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">In Touch In Ruin — ASPEX</div>
-        <div class="card-desc">The Resonate programme's second year provided Portsmouth-based emerging artists with XR tools, creative mentorship, and dedicated studio space — culminating in an exhibition at Aspex.</div>
+        <div class="card-desc">A hands-on workshop led by Tom Ward — from clay modelling to 3D scanning with Scaniverse, all the way to animation. Physical to digital in one session.</div>
         <div class="card-read">Read more →</div>
       </div>
     </a>
 
     <a class="card" href="post/open-brush-modelling-with-tom-ward.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_2160d47e035b4367afbd7fcc219d3b98~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_85/f82aa6_2160d47e035b4367afbd7fcc219d3b98~mv2.jpg" alt="Open Brush modelling with Tom Ward" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_57b98c63ec924e9f9af47a5d08fc1384_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_57b98c63ec924e9f9af47a5d08fc1384_mv2.jpg" alt="Open Brush modelling with Tom Ward" loading="lazy">
       <div class="card-body">
         <div class="card-title">Open Brush Modelling with Tom Ward</div>
-        <div class="card-desc">It was so fun seeing people step into virtual reality for the first time, experimenting with Open Brush, and realising they can paint in 3D space. Then bringing those VR artworks into AR using STYLY.</div>
+        <div class="card-desc">Seeing people step into VR for the first time and paint in 3D space with Open Brush — then bringing those artworks into AR with STYLY.</div>
         <div class="card-read">Read more →</div>
       </div>
     </a>
 
     <a class="card" href="post/past-makes-future-2025-1.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_6cc877128f074359bebe280f7cd66477~mv2.jpg/v1/fill/w_800,h_534,al_c,q_85/f82aa6_6cc877128f074359bebe280f7cd66477~mv2.jpg" alt="What we learnt at Past Makes Future 2025" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_8c04e55cb97548c29511e6ee6d3e3bc6_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_8c04e55cb97548c29511e6ee6d3e3bc6_mv2.jpg" alt="What we learnt at Past Makes Future 2025" loading="lazy">
       <div class="card-body">
         <div class="card-title">What We Learnt at PAST MAKES FUTURE 2025</div>
-        <div class="card-desc">Artists, technologists, and heritage professionals gathered to explore how we can redefine Portsmouth's creative landscape — conversations that were bold, challenging, and full of ambition.</div>
-        <div class="card-read">Read more →</div>
-      </div>
-    </a>
-
-    <a class="card" href="post/past-makes-future-2025.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_6634d83059314fe094b021f6aa87be3e~mv2.jpg/v1/fill/w_800,h_534,al_c,q_85/f82aa6_6634d83059314fe094b021f6aa87be3e~mv2.jpg" alt="Past Makes Future 2025" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Past Makes Future 2025</div>
-        <div class="card-desc">Past Makes Future returns on 10 February 2025 at Portsmouth Guildhall — with an expansive international focus exploring new frontiers in art and heritage through emerging technologies.</div>
+        <div class="card-desc">Artists, technologists, and heritage professionals gathered to explore how to redefine Portsmouth's creative landscape. Bold, challenging conversations full of ambition.</div>
         <div class="card-read">Read more →</div>
       </div>
     </a>
 
     <a class="card" href="post/puppetry-xr-theatre-making-with-phoebe-hyder.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_fcc46949caaa46f58821dc3569bec2be~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_85/f82aa6_fcc46949caaa46f58821dc3569bec2be~mv2.jpg" alt="Puppetry - XR Theatre making with Phoebe Hyder" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg" alt="Puppetry XR Theatre with Phoebe Hyder" loading="lazy">
       <div class="card-body">
         <div class="card-title">Puppetry — XR Theatre Making with Phoebe Hyder</div>
-        <div class="card-desc">Phoebe Hyder led a workshop in devising with technology and the senses — pioneering performer and creative director working at the intersection of puppetry, motion capture, and XR theatre.</div>
+        <div class="card-desc">Phoebe Hyder led a workshop at the intersection of puppetry, motion capture, and XR theatre — pioneering new forms of hybrid performance storytelling.</div>
         <div class="card-read">Read more →</div>
       </div>
     </a>
 
     <a class="card" href="post/reflecting-on-our-digital-sculpting-ar-workshop-with-livi-wilmore.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_bb725a0f094347388b6741c12ebb6853~mv2.jpg/v1/fill/w_800,h_534,al_c,q_85/f82aa6_bb725a0f094347388b6741c12ebb6853~mv2.jpg" alt="Digital Sculpting AR Workshop with Livi Wilmore" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_7c6e9d2d17da4e2c8f7c9008e2af8f11_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_7c6e9d2d17da4e2c8f7c9008e2af8f11_mv2.jpg" alt="Digital Sculpting AR Workshop with Livi Wilmore" loading="lazy">
       <div class="card-body">
         <div class="card-title">Reflecting on Our Digital Sculpting &amp; AR Workshop with Livi Wilmore</div>
-        <div class="card-desc">Livi Wilmore guided us through Sculpt GL and 8th Wall — showing how anyone can dive into digital sculpting without expensive software, and then place their creations in augmented reality.</div>
-        <div class="card-read">Read more →</div>
-      </div>
-    </a>
-
-    <a class="card" href="post/resonate-i.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_29596885da8a4a79b037fb6a0128cbe2~mv2.jpg/v1/fill/w_800,h_533,al_c,q_85/f82aa6_29596885da8a4a79b037fb6a0128cbe2~mv2.jpg" alt="Resonate (i)" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Resonate (i)</div>
-        <div class="card-desc">Treadgolds Community Space hosted Resonate — the outcome of an artist development programme where five groups of local artists pushed the boundaries of how we engage with memories through art and emerging technologies.</div>
-        <div class="card-read">Read more →</div>
-      </div>
-    </a>
-
-    <a class="card" href="post/resonate-ii-hannah-mae-buckingham.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_85e54576a63147b5b7693c821ce81d2e~mv2.png/v1/fill/w_800,h_569,al_c,q_90/f82aa6_85e54576a63147b5b7693c821ce81d2e~mv2.png" alt="Resonate (ii) - Hannah Mae Buckingham" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Resonate (ii) — Hannah Mae Buckingham</div>
-        <div class="card-desc">Resonate artist Hannah Mae Buckingham reflects on their process — now that the exhibition In Touch, In Ruin is open at Aspex Portsmouth.</div>
-        <div class="card-read">Read more →</div>
-      </div>
-    </a>
-
-    <a class="card" href="post/resonate-ii-touring-open-studio-xr-and-heritage.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_27ed62a792b84bf3a134ac0b44bec09a~mv2.jpg/v1/fill/w_800,h_534,al_c,q_85/f82aa6_27ed62a792b84bf3a134ac0b44bec09a~mv2.jpg" alt="Resonate (ii) Touring Open Studio" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Resonate (ii) Touring Open Studio — XR and Heritage</div>
-        <div class="card-desc">In 2025, Play Office travelled to Cairo to present Resonate II Open Studio at Medrar for Contemporary Art — a live snapshot of a Portsmouth-based programme in motion.</div>
+        <div class="card-desc">Livi Wilmore guided participants through Sculpt GL and 8th Wall — browser-based 3D sculpting straight into augmented reality, no downloads required.</div>
         <div class="card-read">Read more →</div>
       </div>
     </a>
 
     <a class="card" href="post/sxsw-sharing-play-office-with-austin-texas.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_602de837181b436ea65b35f44049a7cb~mv2.jpg/v1/fill/w_800,h_1067,al_c,q_85/f82aa6_602de837181b436ea65b35f44049a7cb~mv2.jpg" alt="SXSW - Sharing Play Office with Austin Texas" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_0ff57007514642c784a467acf7d55ef4_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_0ff57007514642c784a467acf7d55ef4_mv2.jpg" alt="SXSW Austin Texas" loading="lazy">
       <div class="card-body">
         <div class="card-title">SXSW — Sharing Play Office with Austin, Texas</div>
-        <div class="card-desc">I had the chance to speak at SXSW 2025 in Austin as part of British Underground's Future Art and Culture program, on a panel called "Embracing The Complex: Designing for Kinship and Compassion."</div>
+        <div class="card-desc">Speaking at SXSW 2025 as part of British Underground's Future Art and Culture program on the panel "Embracing The Complex: Designing for Kinship and Compassion."</div>
         <div class="card-read">Read more →</div>
       </div>
     </a>
 
     <a class="card" href="post/touch-designer-projection-mapping.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_2cd941c6e07d43dcbd583d73f7dd7614~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_85/f82aa6_2cd941c6e07d43dcbd583d73f7dd7614~mv2.jpg" alt="Touch Designer + Projection mapping" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_b97cbdf24e8a4a9390ea464da4785337_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_b97cbdf24e8a4a9390ea464da4785337_mv2.jpg" alt="Touch Designer Projection Mapping" loading="lazy">
       <div class="card-body">
         <div class="card-title">Touch Designer + Projection Mapping</div>
-        <div class="card-desc">PLAY OFFICE was packed for a sold-out workshop with Thomas Buckley — getting hands-on with TouchDesigner and Kantan Mapper, with three attendees coming all the way from the Isle of Wight.</div>
+        <div class="card-desc">A sold-out workshop with Thomas Buckley — getting hands-on with TouchDesigner and Kantan Mapper, with three attendees coming from the Isle of Wight.</div>
         <div class="card-read">Read more →</div>
       </div>
     </a>
 
     <a class="card" href="post/we-re-launched-thank-you.html">
-      <img class="card-img" src="https://static.wixstatic.com/media/f82aa6_d589ba4b71aa43b1ac8c4ca06f131047~mv2.jpg/v1/fill/w_800,h_534,al_c,q_85/f82aa6_d589ba4b71aa43b1ac8c4ca06f131047~mv2.jpg" alt="We're Launched! Thank you!" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_b4607d25222e4303b1c5c58789da78f0_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_b4607d25222e4303b1c5c58789da78f0_mv2.jpg" alt="We're Launched" loading="lazy">
       <div class="card-body">
         <div class="card-title">We're Launched! (Thank you!)</div>
-        <div class="card-desc">What an unforgettable evening! A heartfelt thank you to everyone who joined us to celebrate the opening of PLAY OFFICE — exploring the space, tech demos, and limited-edition screenprints with ZooPoo.</div>
+        <div class="card-desc">A heartfelt thank you to everyone who joined us for the opening of PLAY OFFICE — exploring the space, tech demos, and limited-edition screenprints with ZooPoo.</div>
+        <div class="card-read">Read more →</div>
+      </div>
+    </a>
+
+    <!-- ── Posts where HTTrack only captured JS-rendered content — text cards ── -->
+
+    <a class="card" href="post/altercare-a-worldbuilding-workshop-with-beirut-art-centre.html">
+      <div class="card-banner">
+        <div class="card-banner-title">AlterCare: A Worldbuilding Workshop with Beirut Art Centre</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">AlterCare: A Worldbuilding Workshop with Beirut Art Centre</div>
+        <div class="card-desc">What happens when you treat an ecology as the engine of a world? Play Office ran an XR workshop with Lara Kobeissi at Beirut Art Center exploring ecologies, worldbuilding, and XR.</div>
+        <div class="card-read">Read more →</div>
+      </div>
+    </a>
+
+    <a class="card" href="post/bringing-nazar-to-cairo-celebrating-lara-kobeissi-s-journey-at-d-caf.html">
+      <div class="card-banner">
+        <div class="card-banner-title">Bringing "Nazar" to Cairo at D-CAF</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Bringing "Nazar" to Cairo: Lara Kobeissi's Journey at D-CAF</div>
+        <div class="card-desc">Supporting Resonate artist Lara Kobeissi as she brings her multisensory performance Nazar to the Downtown Contemporary Arts Festival in Cairo.</div>
+        <div class="card-read">Read more →</div>
+      </div>
+    </a>
+
+    <a class="card" href="post/in-touch-in-ruin-aspex.html">
+      <div class="card-banner">
+        <div class="card-banner-title">In Touch In Ruin — ASPEX Portsmouth</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">In Touch In Ruin — ASPEX</div>
+        <div class="card-desc">Resonate II culminated in an exhibition at Aspex Portsmouth — five emerging artists using XR tools and mentorship to create work engaging with local heritage.</div>
+        <div class="card-read">Read more →</div>
+      </div>
+    </a>
+
+    <a class="card" href="post/past-makes-future-2025.html">
+      <div class="card-banner">
+        <div class="card-banner-title">Past Makes Future 2025</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Past Makes Future 2025</div>
+        <div class="card-desc">Past Makes Future returns on 10 February 2025 at Portsmouth Guildhall — with an international focus on art, heritage, and emerging technologies.</div>
+        <div class="card-read">Read more →</div>
+      </div>
+    </a>
+
+    <a class="card" href="post/resonate-i.html">
+      <div class="card-banner">
+        <div class="card-banner-title">Resonate (i)</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Resonate (i)</div>
+        <div class="card-desc">Treadgolds Community Space hosted Resonate — five groups of local artists pushing the boundaries of how we engage with memories through art and emerging technologies.</div>
+        <div class="card-read">Read more →</div>
+      </div>
+    </a>
+
+    <a class="card" href="post/resonate-ii-hannah-mae-buckingham.html">
+      <div class="card-banner">
+        <div class="card-banner-title">Resonate (ii) — Hannah Mae Buckingham</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Resonate (ii) — Hannah Mae Buckingham</div>
+        <div class="card-desc">Resonate artist Hannah Mae Buckingham reflects on their process during the residency, now that In Touch, In Ruin is open at Aspex Portsmouth.</div>
+        <div class="card-read">Read more →</div>
+      </div>
+    </a>
+
+    <a class="card" href="post/resonate-ii-touring-open-studio-xr-and-heritage.html">
+      <div class="card-banner">
+        <div class="card-banner-title">Resonate (ii) Touring Open Studio — XR and Heritage</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Resonate (ii) Touring Open Studio — XR and Heritage</div>
+        <div class="card-desc">In 2025 Play Office travelled to Cairo to present Resonate II at Medrar for Contemporary Art — a live snapshot of a Portsmouth programme in motion.</div>
         <div class="card-read">Read more →</div>
       </div>
     </a>
