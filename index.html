@@ -2063,6 +2063,48 @@ Portsmouth Historic Quarter, Victory Gate, HM Naval Base, Portsea, Portsmouth PO
 
 
 
+<!-- Static blog section replacement -->
+<style>
+  #po-static-blog{font-family:Helvetica,Arial,sans-serif;padding:24px 0 40px}
+  #po-static-blog .po-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto;padding:0 24px}
+  #po-static-blog .po-card{display:flex;flex-direction:column;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s}
+  #po-static-blog .po-card:hover{box-shadow:0 6px 20px rgba(19,8,62,.12);transform:translateY(-2px)}
+  #po-static-blog .po-img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#f0f0f0}
+  #po-static-blog .po-banner{width:100%;aspect-ratio:3/2;background:#13083E;display:flex;align-items:center;justify-content:center;padding:1.2rem}
+  #po-static-blog .po-banner-title{color:#fff;font-size:1rem;font-weight:700;line-height:1.4;text-align:center}
+  #po-static-blog .po-body{padding:1rem 1rem 1.25rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
+  #po-static-blog .po-title{font-size:.95rem;font-weight:700;line-height:1.35;color:#13083E}
+  #po-static-blog .po-read{font-size:.75rem;font-weight:700;color:#13083E;text-transform:uppercase;letter-spacing:.06em;margin-top:.4rem}
+  #po-static-blog .po-more{text-align:center;margin-top:28px}
+  #po-static-blog .po-more a{display:inline-block;padding:10px 28px;border:2px solid #13083E;color:#13083E;text-decoration:none;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:2px;transition:background .2s,color .2s}
+  #po-static-blog .po-more a:hover{background:#13083E;color:#fff}
+</style>
+<script>
+(function(){
+  function injectBlog(){
+    var root = document.querySelector('[data-hook="post-list-root"]');
+    if(!root) return;
+    root.innerHTML = '';
+    var div = document.createElement('div');
+    div.id = 'po-static-blog';
+    div.innerHTML = '<div class="po-grid">'
+      + '<a class="po-card" href="post/puppetry-xr-theatre-making-with-phoebe-hyder.html"><img class="po-img" src="static.wixstatic.com/media/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg" alt="Puppetry XR" loading="lazy"><div class="po-body"><div class="po-title">Puppetry — XR Theatre Making with Phoebe Hyder</div><div class="po-read">Read more →</div></div></a>'
+      + '<a class="po-card" href="post/clay-photogrammetry-animation.html"><img class="po-img" src="static.wixstatic.com/media/f82aa6_79a43b4cb28643b8bad2ab23209699f7_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_79a43b4cb28643b8bad2ab23209699f7_mv2.jpg" alt="Clay Photogrammetry" loading="lazy"><div class="po-body"><div class="po-title">Clay → Photogrammetry → Animation</div><div class="po-read">Read more →</div></div></a>'
+      + '<a class="po-card" href="post/resonate-ii-touring-open-studio-xr-and-heritage.html"><div class="po-banner"><div class="po-banner-title">Resonate (ii) Touring Open Studio — XR and Heritage</div></div><div class="po-body"><div class="po-title">Resonate (ii) Touring Open Studio — XR and Heritage</div><div class="po-read">Read more →</div></div></a>'
+      + '<a class="po-card" href="post/altercare-a-worldbuilding-workshop-with-beirut-art-centre.html"><div class="po-banner"><div class="po-banner-title">AlterCare: A Worldbuilding Workshop with Beirut Art Centre</div></div><div class="po-body"><div class="po-title">AlterCare: A Worldbuilding Workshop with Beirut Art Centre</div><div class="po-read">Read more →</div></div></a>'
+      + '<a class="po-card" href="post/in-touch-in-ruin-aspex.html"><div class="po-banner"><div class="po-banner-title">In Touch In Ruin — ASPEX Portsmouth</div></div><div class="po-body"><div class="po-title">In Touch In Ruin — ASPEX</div><div class="po-read">Read more →</div></div></a>'
+      + '<a class="po-card" href="post/resonate-ii-hannah-mae-buckingham.html"><div class="po-banner"><div class="po-banner-title">Resonate (ii) — Hannah Mae Buckingham</div></div><div class="po-body"><div class="po-title">Resonate (ii) — Hannah Mae Buckingham</div><div class="po-read">Read more →</div></div></a>'
+      + '</div>'
+      + '<div class="po-more"><a href="blog.html">View all posts</a></div>';
+    root.appendChild(div);
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(injectBlog, 1500); });
+  } else {
+    setTimeout(injectBlog, 1500);
+  }
+})();
+</script>
 
 
 
