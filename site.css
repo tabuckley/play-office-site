@@ -90,7 +90,8 @@ nav {
   position: relative;
   overflow: hidden;
 }
-.hero-left > img {
+.hero-left > img,
+.hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -375,50 +376,58 @@ nav {
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
 }
-.partner-name {
+.partner-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1.25rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  min-height: 80px;
+}
+.partner-cell img { max-width: 120px; max-height: 48px; width: auto; height: auto; filter: brightness(0) invert(1); opacity: 0.65; }
+.partner-cell img:hover { opacity: 1; }
+.partner-text {
   font-size: 0.72rem;
   font-weight: 700;
   color: rgba(255,255,255,0.5);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   line-height: 1.4;
-  padding: 1.25rem 1rem;
-  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
 }
 
 /* ─────────────────── FOOTER ─────────────────── */
-footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; }
+footer { background: var(--navy); padding: 2.5rem 2rem; }
 .footer-links-row {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
-  align-items: start;
+  align-items: end;
 }
 .footer-nav { display: flex; flex-direction: column; gap: 0.25rem; }
-.footer-nav a { font-size: 0.84rem; color: var(--mid); text-decoration: none; line-height: 2; }
-.footer-nav a:hover { color: var(--navy); }
+.footer-nav a { font-size: 0.84rem; color: rgba(255,255,255,0.55); text-decoration: none; line-height: 2; }
+.footer-nav a:hover { color: #fff; }
 .footer-legal {}
 .footer-legal-label {
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--dark);
+  color: rgba(255,255,255,0.85);
   display: block;
   margin-bottom: 0.25rem;
 }
-.footer-legal a { font-size: 0.84rem; color: var(--mid); text-decoration: none; display: block; line-height: 2; }
-.footer-legal a:hover { color: var(--navy); }
+.footer-legal a { font-size: 0.84rem; color: rgba(255,255,255,0.55); text-decoration: none; display: block; line-height: 2; }
+.footer-legal a:hover { color: #fff; }
 .footer-wordmark {
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--dark);
+  color: #fff;
   text-align: right;
-  align-self: end;
 }
 
 /* ─────────────────── GALLERY ─────────────────── */
