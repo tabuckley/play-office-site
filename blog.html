@@ -1,335 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Play Office</title>
   <meta name="description" content="News, workshops, and projects from Play Office — XR studio in Portsmouth.">
-  <link rel="icon" href="static.wixstatic.com/media/f82aa6_59fdd2706c5b415caee905b535c901dc_mv2.gif" type="image/gif">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: Helvetica, Arial, sans-serif;
-      background: #fff;
-      color: #1E1E1E;
-      min-height: 100vh;
-    }
-
-    nav {
-      background: #13083E;
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-    .nav-brand {
-      color: #fff;
-      font-size: 1.2rem;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: #fff; }
-
-    .page-header {
-      padding: 4rem 2rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    .page-header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #13083E;
-      letter-spacing: -0.02em;
-    }
-
-    .blog-grid {
-      max-width: 1200px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #e5e5e5;
-      border-radius: 4px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .card:hover {
-      box-shadow: 0 8px 24px rgba(19,8,62,0.12);
-      transform: translateY(-2px);
-    }
-
-    /* Card with photo */
-    .card-img {
-      width: 100%;
-      aspect-ratio: 3/2;
-      object-fit: cover;
-      display: block;
-      background: #f0f0f0;
-    }
-
-    /* Card without photo — dark text banner */
-    .card-banner {
-      width: 100%;
-      aspect-ratio: 3/2;
-      background: #13083E;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-    }
-    .card-banner-title {
-      color: #fff;
-      font-size: 1.15rem;
-      font-weight: 700;
-      line-height: 1.4;
-      text-align: center;
-    }
-
-    .card-body {
-      padding: 1.25rem 1.25rem 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .card-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.35;
-      color: #13083E;
-    }
-    /* Hide title in body when banner already shows it */
-    .card-banner + .card-body .card-title { display: none; }
-
-    .card-desc {
-      font-size: 0.88rem;
-      color: #4F4F4F;
-      line-height: 1.6;
-      flex: 1;
-    }
-    .card-read {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #13083E;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 0.5rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      font-size: 0.8rem;
-      color: #8D8D8D;
-      border-top: 1px solid #e5e5e5;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 600px) {
-      .nav-links { gap: 1rem; }
-      .page-header h1 { font-size: 1.8rem; }
-      .blog-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-brand">Play Office</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a class="nav-brand" href="index.html">Play Office</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+  </ul>
+</nav>
 
-  <div class="page-header">
-    <h1>Blog</h1>
-  </div>
+<div class="page-header">
+  <h1>Blog</h1>
+</div>
 
-  <div class="blog-grid">
-
-    <!-- ── Posts with local images ── -->
+<div style="padding: 0 2rem 4rem; max-width: 1100px; margin: 0 auto;">
+  <div class="card-grid">
 
     <a class="card" href="post/clay-photogrammetry-animation.html">
       <img class="card-img" src="static.wixstatic.com/media/f82aa6_79a43b4cb28643b8bad2ab23209699f7_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_79a43b4cb28643b8bad2ab23209699f7_mv2.jpg" alt="Clay Photogrammetry Animation" loading="lazy">
       <div class="card-body">
-        <div class="card-title">Clay → Photogrammetry → Animation</div>
-        <div class="card-desc">A hands-on workshop led by Tom Ward — from clay modelling to 3D scanning with Scaniverse, all the way to animation. Physical to digital in one session.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Clay, Photogrammetry &amp; Animation</p>
+        <p class="card-desc">A hands-on workshop exploring 3D scanning clay sculptures and bringing them to life through animation.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/open-brush-modelling-with-tom-ward.html">
-      <img class="card-img" src="static.wixstatic.com/media/f82aa6_57b98c63ec924e9f9af47a5d08fc1384_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_57b98c63ec924e9f9af47a5d08fc1384_mv2.jpg" alt="Open Brush modelling with Tom Ward" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_57b98c63ec924e9f9af47a5d08fc1384_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_57b98c63ec924e9f9af47a5d08fc1384_mv2.jpg" alt="Open Brush Modelling with Tom Ward" loading="lazy">
       <div class="card-body">
-        <div class="card-title">Open Brush Modelling with Tom Ward</div>
-        <div class="card-desc">Seeing people step into VR for the first time and paint in 3D space with Open Brush — then bringing those artworks into AR with STYLY.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Open Brush Modelling with Tom Ward</p>
+        <p class="card-desc">Exploring VR painting and 3D modelling using Open Brush in an immersive workshop led by Tom Ward.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/past-makes-future-2025-1.html">
-      <img class="card-img" src="static.wixstatic.com/media/f82aa6_8c04e55cb97548c29511e6ee6d3e3bc6_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_8c04e55cb97548c29511e6ee6d3e3bc6_mv2.jpg" alt="What we learnt at Past Makes Future 2025" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_8c04e55cb97548c29511e6ee6d3e3bc6_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_8c04e55cb97548c29511e6ee6d3e3bc6_mv2.jpg" alt="Past Makes Future 2025" loading="lazy">
       <div class="card-body">
-        <div class="card-title">What We Learnt at PAST MAKES FUTURE 2025</div>
-        <div class="card-desc">Artists, technologists, and heritage professionals gathered to explore how to redefine Portsmouth's creative landscape. Bold, challenging conversations full of ambition.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Past Makes Future 2025</p>
+        <p class="card-desc">A showcase of work exploring how heritage and new technologies can create future-focused artistic practices.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/puppetry-xr-theatre-making-with-phoebe-hyder.html">
-      <img class="card-img" src="static.wixstatic.com/media/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg" alt="Puppetry XR Theatre with Phoebe Hyder" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg" alt="Puppetry XR Theatre Making" loading="lazy">
       <div class="card-body">
-        <div class="card-title">Puppetry — XR Theatre Making with Phoebe Hyder</div>
-        <div class="card-desc">Phoebe Hyder led a workshop at the intersection of puppetry, motion capture, and XR theatre — pioneering new forms of hybrid performance storytelling.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Puppetry &amp; XR Theatre Making with Phoebe Hyder</p>
+        <p class="card-desc">Blending traditional puppetry craft with XR technologies in a collaborative theatre-making workshop.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/reflecting-on-our-digital-sculpting-ar-workshop-with-livi-wilmore.html">
-      <img class="card-img" src="static.wixstatic.com/media/f82aa6_7c6e9d2d17da4e2c8f7c9008e2af8f11_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_7c6e9d2d17da4e2c8f7c9008e2af8f11_mv2.jpg" alt="Digital Sculpting AR Workshop with Livi Wilmore" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_7c6e9d2d17da4e2c8f7c9008e2af8f11_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_7c6e9d2d17da4e2c8f7c9008e2af8f11_mv2.jpg" alt="Digital Sculpting AR Workshop" loading="lazy">
       <div class="card-body">
-        <div class="card-title">Reflecting on Our Digital Sculpting &amp; AR Workshop with Livi Wilmore</div>
-        <div class="card-desc">Livi Wilmore guided participants through Sculpt GL and 8th Wall — browser-based 3D sculpting straight into augmented reality, no downloads required.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Digital Sculpting AR Workshop with Livi Wilmore</p>
+        <p class="card-desc">Reflections on an augmented reality digital sculpting workshop with artist Livi Wilmore.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/sxsw-sharing-play-office-with-austin-texas.html">
       <img class="card-img" src="static.wixstatic.com/media/f82aa6_0ff57007514642c784a467acf7d55ef4_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_0ff57007514642c784a467acf7d55ef4_mv2.jpg" alt="SXSW Austin Texas" loading="lazy">
       <div class="card-body">
-        <div class="card-title">SXSW — Sharing Play Office with Austin, Texas</div>
-        <div class="card-desc">Speaking at SXSW 2025 as part of British Underground's Future Art and Culture program on the panel "Embracing The Complex: Designing for Kinship and Compassion."</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">SXSW — Sharing Play Office with Austin, Texas</p>
+        <p class="card-desc">Taking Play Office to South by Southwest and introducing the project to an international audience.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/touch-designer-projection-mapping.html">
       <img class="card-img" src="static.wixstatic.com/media/f82aa6_b97cbdf24e8a4a9390ea464da4785337_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_b97cbdf24e8a4a9390ea464da4785337_mv2.jpg" alt="Touch Designer Projection Mapping" loading="lazy">
       <div class="card-body">
-        <div class="card-title">Touch Designer + Projection Mapping</div>
-        <div class="card-desc">A sold-out workshop with Thomas Buckley — getting hands-on with TouchDesigner and Kantan Mapper, with three attendees coming from the Isle of Wight.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Touch Designer Projection Mapping</p>
+        <p class="card-desc">A deep dive into projection mapping techniques using Touch Designer in a hands-on creative session.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/we-re-launched-thank-you.html">
-      <img class="card-img" src="static.wixstatic.com/media/f82aa6_b4607d25222e4303b1c5c58789da78f0_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_b4607d25222e4303b1c5c58789da78f0_mv2.jpg" alt="We're Launched" loading="lazy">
+      <img class="card-img" src="static.wixstatic.com/media/f82aa6_b4607d25222e4303b1c5c58789da78f0_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_b4607d25222e4303b1c5c58789da78f0_mv2.jpg" alt="We're Launched — Thank You" loading="lazy">
       <div class="card-body">
-        <div class="card-title">We're Launched! (Thank you!)</div>
-        <div class="card-desc">A heartfelt thank you to everyone who joined us for the opening of PLAY OFFICE — exploring the space, tech demos, and limited-edition screenprints with ZooPoo.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">We're Launched — Thank You</p>
+        <p class="card-desc">Celebrating the launch of Play Office and thanking everyone who made it possible.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
-    <!-- ── Posts where HTTrack only captured JS-rendered content — text cards ── -->
-
     <a class="card" href="post/altercare-a-worldbuilding-workshop-with-beirut-art-centre.html">
-      <div class="card-banner">
-        <div class="card-banner-title">AlterCare: A Worldbuilding Workshop with Beirut Art Centre</div>
-      </div>
+      <div class="card-banner"><span>Altercare — A Worldbuilding Workshop with Beirut Art Centre</span></div>
       <div class="card-body">
-        <div class="card-title">AlterCare: A Worldbuilding Workshop with Beirut Art Centre</div>
-        <div class="card-desc">What happens when you treat an ecology as the engine of a world? Play Office ran an XR workshop with Lara Kobeissi at Beirut Art Center exploring ecologies, worldbuilding, and XR.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Altercare — A Worldbuilding Workshop with Beirut Art Centre</p>
+        <p class="card-desc">A speculative worldbuilding workshop developed in collaboration with Beirut Art Centre.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/bringing-nazar-to-cairo-celebrating-lara-kobeissi-s-journey-at-d-caf.html">
-      <div class="card-banner">
-        <div class="card-banner-title">Bringing "Nazar" to Cairo at D-CAF</div>
-      </div>
+      <div class="card-banner"><span>Bringing Nazar to Cairo — Lara Kobeissi at D-CAF</span></div>
       <div class="card-body">
-        <div class="card-title">Bringing "Nazar" to Cairo: Lara Kobeissi's Journey at D-CAF</div>
-        <div class="card-desc">Supporting Resonate artist Lara Kobeissi as she brings her multisensory performance Nazar to the Downtown Contemporary Arts Festival in Cairo.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Bringing Nazar to Cairo — Celebrating Lara Kobeissi's Journey at D-CAF</p>
+        <p class="card-desc">Reflecting on the journey of bringing Nazar to the D-CAF festival in Cairo.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/in-touch-in-ruin-aspex.html">
-      <div class="card-banner">
-        <div class="card-banner-title">In Touch In Ruin — ASPEX Portsmouth</div>
-      </div>
+      <div class="card-banner"><span>In Touch, In Ruin — Aspex</span></div>
       <div class="card-body">
-        <div class="card-title">In Touch In Ruin — ASPEX</div>
-        <div class="card-desc">Resonate II culminated in an exhibition at Aspex Portsmouth — five emerging artists using XR tools and mentorship to create work engaging with local heritage.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">In Touch, In Ruin — Aspex</p>
+        <p class="card-desc">A reflection on the In Touch, In Ruin exhibition and event at Aspex Gallery, Portsmouth.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/past-makes-future-2025.html">
-      <div class="card-banner">
-        <div class="card-banner-title">Past Makes Future 2025</div>
-      </div>
+      <div class="card-banner"><span>Past Makes Future 2025 (i)</span></div>
       <div class="card-body">
-        <div class="card-title">Past Makes Future 2025</div>
-        <div class="card-desc">Past Makes Future returns on 10 February 2025 at Portsmouth Guildhall — with an international focus on art, heritage, and emerging technologies.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Past Makes Future 2025 (i)</p>
+        <p class="card-desc">The first instalment of the Past Makes Future programme exploring heritage-led creative practice.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/resonate-i.html">
-      <div class="card-banner">
-        <div class="card-banner-title">Resonate (i)</div>
-      </div>
+      <div class="card-banner"><span>Resonate (i)</span></div>
       <div class="card-body">
-        <div class="card-title">Resonate (i)</div>
-        <div class="card-desc">Treadgolds Community Space hosted Resonate — five groups of local artists pushing the boundaries of how we engage with memories through art and emerging technologies.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Resonate (i)</p>
+        <p class="card-desc">The first Resonate artist development programme — supporting emerging artists with technology-led practice.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/resonate-ii-hannah-mae-buckingham.html">
-      <div class="card-banner">
-        <div class="card-banner-title">Resonate (ii) — Hannah Mae Buckingham</div>
-      </div>
+      <div class="card-banner"><span>Resonate (ii) — Hannah Mae Buckingham</span></div>
       <div class="card-body">
-        <div class="card-title">Resonate (ii) — Hannah Mae Buckingham</div>
-        <div class="card-desc">Resonate artist Hannah Mae Buckingham reflects on their process during the residency, now that In Touch, In Ruin is open at Aspex Portsmouth.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Resonate (ii) — Hannah Mae Buckingham</p>
+        <p class="card-desc">A spotlight on Hannah Mae Buckingham and her work as part of the Resonate (ii) programme.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
     <a class="card" href="post/resonate-ii-touring-open-studio-xr-and-heritage.html">
-      <div class="card-banner">
-        <div class="card-banner-title">Resonate (ii) Touring Open Studio — XR and Heritage</div>
-      </div>
+      <div class="card-banner"><span>Resonate (ii) — Touring Open Studio: XR and Heritage</span></div>
       <div class="card-body">
-        <div class="card-title">Resonate (ii) Touring Open Studio — XR and Heritage</div>
-        <div class="card-desc">In 2025 Play Office travelled to Cairo to present Resonate II at Medrar for Contemporary Art — a live snapshot of a Portsmouth programme in motion.</div>
-        <div class="card-read">Read more →</div>
+        <p class="card-title">Resonate (ii) — Touring Open Studio: XR and Heritage</p>
+        <p class="card-desc">An open studio event touring XR and heritage work from the Resonate (ii) artists.</p>
+        <span class="card-read">Read More &rarr;</span>
       </div>
     </a>
 
   </div>
+</div>
 
-  <footer>
-    &copy; Play Office. All rights reserved.
-  </footer>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h3>Play Office</h3>
+      <p>Play Office is a UK-based creative studio and cultural organisation, directed by Thomas Buckley.</p>
+    </div>
+    <div>
+      <h3>Navigate</h3>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <h3>Get in Touch</h3>
+      <a href="mailto:hello@play-office.com">hello@play-office.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-conditions.html">Terms &amp; Conditions</a>
+    <a href="accessibility.html">Accessibility Statement</a>
+  </div>
+</footer>
 
 </body>
 </html>
