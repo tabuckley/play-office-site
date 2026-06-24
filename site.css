@@ -80,30 +80,53 @@ nav {
 
 /* ─────────────────── HERO ─────────────────── */
 .hero {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  height: 75vh;
+  min-height: 480px;
+  max-height: 900px;
 }
-.hero-left {
-  position: relative;
+
+/* Left: navy title column — shrinks to 0 when video is hovered */
+.hero-title-col {
+  background: var(--navy);
+  flex: 0 0 240px;
+  max-width: 240px;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
   overflow: hidden;
+  transition: flex-basis 0.5s cubic-bezier(0.4,0,0.2,1),
+              max-width  0.5s cubic-bezier(0.4,0,0.2,1);
 }
-.hero-left > img { width: 100%; height: auto; display: block; }
-.hero-video { width: 100%; height: auto; display: block; }
-.hero-left-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0 2rem 2.5rem;
-  background: linear-gradient(to top, rgba(10,5,30,0.75) 0%, transparent 70%);
-}
-.hero-left-text h1 {
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
+.hero-title-col h1 {
+  font-size: clamp(1.6rem, 2vw, 2.6rem);
   font-weight: 700;
   color: #fff;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.03em;
+  white-space: nowrap;
 }
+
+/* Middle: video column — grows on hover */
+.hero-mid {
+  flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hover: expand video, collapse title col */
+.hero:has(.hero-mid:hover) .hero-title-col {
+  flex-basis: 0;
+  max-width: 0;
+}
+
 .sound-btn {
   position: absolute;
   bottom: 1.1rem;
@@ -124,7 +147,8 @@ nav {
 }
 .sound-btn:hover { background: rgba(0,0,0,0.7); border-color: rgba(255,255,255,0.7); }
 .sound-btn svg { width: 17px; height: 17px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-/* Right panel: white */
+
+/* Right panel: white, fixed ~1/3 */
 .hero-right {
   background: #fff;
   border-left: 1px solid var(--border);
@@ -132,6 +156,8 @@ nav {
   flex-direction: column;
   padding: 1.5rem;
   overflow: hidden;
+  flex: 0 0 28%;
+  max-width: 360px;
 }
 .hero-right-top {
   display: flex;
@@ -510,8 +536,11 @@ footer { background: var(--navy); padding: 2.5rem 2rem; }
 
 /* ─────────────────── RESPONSIVE ─────────────────── */
 @media (max-width: 960px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-right { min-height: 240px; border-left: none; border-top: 1px solid var(--border); }
+  .hero { flex-direction: column; height: auto; max-height: none; }
+  .hero-title-col { flex: 0 0 auto; max-width: none; padding: 2rem; }
+  .hero-title-col h1 { white-space: normal; }
+  .hero-mid { min-height: 56vw; }
+  .hero-right { flex: 0 0 auto; max-width: none; min-height: 240px; border-left: none; border-top: 1px solid var(--border); }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .artist-row { grid-template-columns: repeat(3, 1fr); }
   .tech-grid { grid-template-columns: 1fr; }

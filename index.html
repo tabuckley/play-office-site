@@ -21,17 +21,19 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
+
+  <!-- Left: navy title column -->
+  <div class="hero-title-col">
+    <h1>Accessible<br>Technology<br>Lab and Art<br>Studio</h1>
+  </div>
+
+  <!-- Middle: video, expands on hover -->
+  <div class="hero-mid">
     <video id="heroVideo" autoplay muted loop playsinline class="hero-video">
       <source src="sizzle.mp4" type="video/mp4">
     </video>
-    <div class="hero-left-text">
-      <h1>Accessible<br>Technology<br>Lab and Art<br>Studio</h1>
-    </div>
     <button class="sound-btn" id="soundBtn" aria-label="Unmute video">
-      <!-- muted icon (default) -->
       <svg id="iconMuted" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-      <!-- unmuted icon (hidden by default) -->
       <svg id="iconSound" viewBox="0 0 24 24" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
     </button>
     <script>
@@ -49,6 +51,8 @@
       })();
     </script>
   </div>
+
+  <!-- Right: info panel -->
   <div class="hero-right">
     <div class="hero-right-top">
       <span>Portsmouth, UK</span>
@@ -62,6 +66,7 @@
       <span class="event-cta"><a href="blog.html">Read the Blog</a></span>
     </div>
   </div>
+
 </section>
 
 <!-- ABOUT -->
