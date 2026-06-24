@@ -25,20 +25,17 @@
 
 <!-- ─── HERO ─── -->
 <section class="hero-new" id="home">
-  <video class="hero-video-bg" autoplay muted loop playsinline aria-hidden="true">
+  <video class="hero-video-bg" autoplay muted loop playsinline>
     <source src="sizzle.mp4" type="video/mp4">
   </video>
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <canvas id="heroCanvas" aria-hidden="true"></canvas>
-  <div class="hero-content">
-    <span class="hero-tag">Portsmouth, UK &mdash; Free and open to all</span>
+  <div class="hero-glyphs" aria-hidden="true">
+    <img src="glyph-play.svg" alt="" class="hero-glyph">
+    <img src="glyph-clover.png" alt="" class="hero-glyph">
+    <img src="glyph-blob.png" alt="" class="hero-glyph">
+    <img src="glyph-star.png" alt="" class="hero-glyph">
+  </div>
+  <div class="hero-text">
     <h1>Creative technology,<br>shared.</h1>
-    <p class="hero-sub">Play Office is a free creative technology lab, equipment library and artist studio in Portsmouth. Borrow tools, learn by making, and develop new work with XR, projection, sound, 3D capture and immersive media.</p>
-    <div class="hero-ctas">
-      <a href="#equipment" class="btn btn-white">Borrow equipment</a>
-      <a href="#workshops" class="btn btn-white">See workshops</a>
-      <a href="#visit" class="btn btn-white">Visit Play Office</a>
-    </div>
   </div>
 </section>
 
@@ -340,6 +337,8 @@
 <script>
 (function () {
   var canvas = document.getElementById('heroCanvas');
+  // canvas removed — script no-ops
+  if (!canvas) return;
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
