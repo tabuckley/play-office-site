@@ -41,6 +41,11 @@ nav {
 }
 .nav-pills a:hover,
 .nav-pills a.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.nav-logo {
+  height: 20px;
+  width: auto;
+  display: block;
+}
 .nav-brand {
   font-size: 1.1rem;
   font-weight: 800;
