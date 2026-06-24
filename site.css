@@ -727,6 +727,58 @@ footer { background: var(--navy); padding: 2.5rem 2rem; }
 .contact-direct a { color: var(--navy); text-decoration: none; }
 .contact-direct a:hover { text-decoration: underline; }
 
+/* ─────────────────── EVENTS PAGE ─────────────────── */
+.events-upcoming { max-width: 620px; }
+.events-intro { font-size: 0.95rem; color: var(--mid); line-height: 1.8; margin-bottom: 1.5rem; }
+.events-eb-btn { margin-bottom: 1rem; display: inline-block; }
+.events-eb-note { font-size: 0.82rem; color: var(--mid); line-height: 1.75; margin-top: 0.75rem; }
+.events-eb-note a { color: var(--navy); text-decoration: none; }
+.events-eb-note a:hover { text-decoration: underline; }
+
+.events-list { display: flex; flex-direction: column; gap: 0; }
+.event-year-group { margin-bottom: 2.5rem; }
+.event-year {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--light);
+  border-top: 2px solid var(--navy);
+  padding-top: 0.75rem;
+  margin-bottom: 0;
+}
+.event-items { list-style: none; padding: 0; }
+.event-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.event-item h4 { font-size: 0.97rem; font-weight: 700; color: var(--dark); margin: 0.35rem 0 0.5rem; line-height: 1.35; }
+.event-item h4 a { color: inherit; text-decoration: none; }
+.event-item h4 a:hover { color: var(--navy); text-decoration: underline; }
+.event-item p { font-size: 0.84rem; color: var(--mid); line-height: 1.8; }
+.event-meta { display: flex; gap: 0.75rem; align-items: center; }
+.event-type {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--navy);
+  color: #fff;
+  padding: 2px 9px;
+  border-radius: 50px;
+}
+.event-location { font-size: 0.75rem; color: var(--light); letter-spacing: 0.02em; }
+.events-cta-bar {
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+  font-size: 0.84rem;
+  color: var(--mid);
+  line-height: 1.75;
+}
+.events-cta-bar a { color: var(--navy); text-decoration: none; }
+.events-cta-bar a:hover { text-decoration: underline; }
+
 /* ─────────────────── RESPONSIVE ─────────────────── */
 @media (max-width: 960px) {
   .hero { flex-direction: column; height: auto; max-height: none; }
