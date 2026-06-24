@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Play Office | Free Creative Technology Lab &amp; Equipment Library, Portsmouth</title>
-  <meta name="description" content="Play Office is a free creative technology lab, equipment library and artist studio in Portsmouth. XR, immersive media, projection, sound, 3D capture and digital storytelling for artists, communities and cultural partners.">
+  <title>Play Office | Creative Technology Lab, Portsmouth</title>
+  <meta name="description" content="Play Office is a free creative technology lab, equipment library and artist studio in Portsmouth. Borrow tools, learn by making, and develop new work with XR, projection, sound, 3D capture and immersive media.">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
 <nav>
   <div class="nav-pills">
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html" class="active">About</a>
     <a href="#equipment">Equipment</a>
     <a href="#workshops">Workshops</a>
-    <a href="#artist-development">Artists</a>
-    <a href="impact.html">Impact</a>
-    <a href="events.html">Events</a>
+    <a href="#resonate">Resonate</a>
     <a href="blog.html">Blog</a>
-    <a href="#contact">Contact</a>
+    <a href="#visit">Visit</a>
   </div>
   <a class="nav-brand" href="index.html">P&#x2736;AY OFFICE</a>
 </nav>
@@ -26,429 +24,292 @@
 <main>
 
 <!-- ─── HERO ─── -->
-<section class="hero" id="home">
-
-  <div class="hero-title-col">
-    <div class="hero-title-inner">
-      <span class="hero-eyebrow">Portsmouth, UK &mdash; Free and open to all</span>
-      <h1>Free creative technology lab, equipment library and artist studio.</h1>
-    </div>
-  </div>
-
-  <div class="hero-mid">
-    <video id="heroVideo" autoplay muted loop playsinline class="hero-video">
-      <source src="sizzle.mp4" type="video/mp4">
-    </video>
-    <button class="sound-btn" id="soundBtn" aria-label="Unmute video">
-      <svg id="iconMuted" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-      <svg id="iconSound" viewBox="0 0 24 24" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-    </button>
-    <script>
-      (function(){
-        var btn = document.getElementById('soundBtn');
-        var video = document.getElementById('heroVideo');
-        var iMuted = document.getElementById('iconMuted');
-        var iSound = document.getElementById('iconSound');
-        btn.addEventListener('click', function(){
-          video.muted = !video.muted;
-          iMuted.style.display = video.muted ? '' : 'none';
-          iSound.style.display = video.muted ? 'none' : '';
-          btn.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
-        });
-      })();
-    </script>
-  </div>
-
-  <div class="hero-right">
-    <p class="hero-sub">We support artists, students, communities and cultural partners to experiment with XR, immersive media, projection, sound, 3D capture and digital storytelling.</p>
+<section class="hero-new" id="home">
+  <video class="hero-video-bg" autoplay muted loop playsinline aria-hidden="true">
+    <source src="sizzle.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <span class="hero-tag">Portsmouth, UK &mdash; Free and open to all</span>
+    <h1>Creative technology,<br>shared.</h1>
+    <p class="hero-sub">Play Office is a free creative technology lab, equipment library and artist studio in Portsmouth. Borrow tools, learn by making, and develop new work with XR, projection, sound, 3D capture and immersive media.</p>
     <div class="hero-ctas">
-      <a href="#equipment" class="btn btn-filled">Borrow equipment</a>
-      <a href="#workshops" class="btn btn-filled">Join a workshop</a>
-      <a href="#contact" class="btn">Work with us</a>
+      <a href="#equipment" class="btn btn-white">Borrow equipment</a>
+      <a href="#workshops" class="btn btn-white">See workshops</a>
+      <a href="#visit" class="btn btn-white">Visit Play Office</a>
     </div>
-    <p class="hero-footnote">&#x2736; Free access for artists, communities and cultural partners in Portsmouth and beyond.</p>
   </div>
-
 </section>
 
-<!-- ─── WHAT YOU CAN DO ─── -->
-<section class="section" id="what-you-can-do">
+<!-- ─── BORROW / LEARN / MAKE / MEET ─── -->
+<section id="what-we-do" aria-label="What you can do at Play Office">
+  <div class="blmm">
+    <a class="blmm-item" href="#equipment">
+      <span class="blmm-word">BORROW</span>
+      <span class="blmm-desc">creative technology without buying expensive kit.</span>
+    </a>
+    <a class="blmm-item" href="#workshops">
+      <span class="blmm-word">LEARN</span>
+      <span class="blmm-desc">XR, projection, sound, 3D capture and digital storytelling through hands-on workshops.</span>
+    </a>
+    <a class="blmm-item" href="#resonate">
+      <span class="blmm-word">MAKE</span>
+      <span class="blmm-desc">new artworks, tests, prototypes, exhibitions and public experiments.</span>
+    </a>
+    <a class="blmm-item" href="#visit">
+      <span class="blmm-word">MEET</span>
+      <span class="blmm-desc">artists, communities, technologists and cultural partners.</span>
+    </a>
+  </div>
+</section>
+
+<!-- ─── EQUIPMENT LIBRARY ─── -->
+<section class="section section-dark" id="equipment">
   <div class="section-inner">
     <div class="section-label-row">
-      <span class="label">What you can do here</span>
+      <span class="label">Equipment library</span>
       <span class="year">2025</span>
     </div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-num">01</div>
-        <h3>Borrow creative technology</h3>
-        <p>Access VR headsets, projection equipment, sound tools, sensors, 3D capture devices and other creative technology without needing to buy expensive kit.</p>
-        <a href="#equipment" class="service-link">Browse equipment &rarr;</a>
-      </div>
-      <div class="service-card">
-        <div class="service-num">02</div>
-        <h3>Learn through workshops</h3>
-        <p>Take part in hands-on sessions exploring XR, projection mapping, photogrammetry, immersive sound, digital storytelling and creative technology through making.</p>
-        <a href="#workshops" class="service-link">See workshops &rarr;</a>
-      </div>
-      <div class="service-card">
-        <div class="service-num">03</div>
-        <h3>Develop new artistic work</h3>
-        <p>Join artist development programmes, mentoring and peer support through projects like Resonate &mdash; with commissions, public outcomes and international connection.</p>
-        <a href="#artist-development" class="service-link">Artist development &rarr;</a>
-      </div>
-      <div class="service-card">
-        <div class="service-num">04</div>
-        <h3>Collaborate with us</h3>
-        <p>Work with Play Office on heritage, memory, community, education and immersive media projects. We work with artists, venues, universities, schools and funders.</p>
-        <a href="#contact" class="service-link">Get in touch &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <h2 class="dark-heading">Borrow creative technology for free.</h2>
+    <p class="dark-body" style="max-width:580px;margin-bottom:0;">Play Office&rsquo;s equipment library helps artists, students and community groups test ideas without buying expensive kit. Through our partnership with Share Portsmouth and the Library of Things, people can access tools for VR, projection, sound, sensors, 3D capture and immersive media.</p>
 
-<!-- ─── IMPACT ─── -->
-<section class="section section-dark" id="impact-strip">
-  <div class="section-inner">
-    <div class="section-label-row">
-      <span class="label">Play Office in numbers</span>
-      <span class="year">Since 2023</span>
+    <div class="shelf" role="list">
+      <div class="shelf-item" role="listitem" tabindex="0">
+        <span class="shelf-label">VR</span>
+        <span class="shelf-desc">Meta Quest headsets for immersive experiences and 3D spatial design.</span>
+      </div>
+      <div class="shelf-item" role="listitem" tabindex="0">
+        <span class="shelf-label">Projection</span>
+        <span class="shelf-desc">Portable projectors for mapping, installation and live performance.</span>
+      </div>
+      <div class="shelf-item" role="listitem" tabindex="0">
+        <span class="shelf-label">Sound</span>
+        <span class="shelf-desc">Field recorders, microphones, mixers and speakers for audio work.</span>
+      </div>
+      <div class="shelf-item" role="listitem" tabindex="0">
+        <span class="shelf-label">Sensors</span>
+        <span class="shelf-desc">Kinect, motion capture and environmental sensing tools.</span>
+      </div>
+      <div class="shelf-item" role="listitem" tabindex="0">
+        <span class="shelf-label">3D Capture</span>
+        <span class="shelf-desc">Photogrammetry rigs and LiDAR scanning for 3D digitisation.</span>
+      </div>
+      <div class="shelf-item" role="listitem" tabindex="0">
+        <span class="shelf-label">Lighting</span>
+        <span class="shelf-desc">LED panels, gels and rigging for photography and installation.</span>
+      </div>
+      <div class="shelf-item" role="listitem" tabindex="0">
+        <span class="shelf-label">Creative Coding</span>
+        <span class="shelf-desc">Arduinos, Raspberry Pis and electronics for interactive work.</span>
+      </div>
+      <div class="shelf-item" role="listitem" tabindex="0">
+        <span class="shelf-label">Installation</span>
+        <span class="shelf-desc">Cables, stands, mounts and technical kit for gallery-ready work.</span>
+      </div>
     </div>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <span class="stat-num">40</span>
-        <span class="stat-label">Artists engaged</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">2,996</span>
-        <span class="stat-label">Project participants</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">3,472</span>
-        <span class="stat-label">Exhibition visitors</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">356</span>
-        <span class="stat-label">Education attendees</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">&pound;16,200</span>
-        <span class="stat-label">Free workshop value</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">&pound;30,000</span>
-        <span class="stat-label">Paid in artist fees</span>
-      </div>
-    </div>
-    <p class="impact-note">Play Office has also supported 8 successful ACE-funded programmes, raised &pound;23,083 through British Council-supported international exchange, and helped artists tour work across 5 countries.</p>
-    <blockquote class="impact-pull">&ldquo;A much needed resource for the city of Portsmouth&hellip; Play Office has ignited a passion for creative technology and arts practices among the local community.&rdquo;</blockquote>
-    <a href="impact.html" class="btn btn-white">Read our full impact report &rarr;</a>
-  </div>
-</section>
 
-<!-- ─── TECH LIBRARY ─── -->
-<section class="section" id="equipment">
-  <div class="section-inner">
-    <div class="section-label-row">
-      <span class="label">Tech. Library &mdash; Borrow equipment for free</span>
-      <span class="year">2025</span>
+    <div class="shelf-data">
+      <span class="shelf-stat"><strong>&pound;2,120</strong> equipment purchases saved</span>
+      <span class="shelf-stat"><strong>0.3 tonnes</strong> carbon saved</span>
     </div>
-    <div class="feature-split">
-      <div class="feature-text">
-        <h2>Borrow creative technology for free</h2>
-        <p>Play Office's equipment library helps artists, students and community groups test ideas without needing to buy expensive kit. Through our partnership with Share Portsmouth and the Library of Things, people can access tools for VR, projection, sound, sensors, 3D capture and immersive media.</p>
-        <div class="mini-stats">
-          <div class="mini-stat">
-            <strong>&pound;2,120</strong>
-            <span>Equipment purchases saved</span>
-          </div>
-          <div class="mini-stat">
-            <strong>0.3t</strong>
-            <span>Carbon saved</span>
-          </div>
-        </div>
-        <div class="btn-row">
-          <a href="gallery.html" class="btn btn-filled">Browse equipment</a>
-          <a href="#contact" class="btn">Ask us what you need</a>
-        </div>
-      </div>
-      <div class="feature-aside">
-        <div class="tech-img-pair">
-          <div class="tech-img-item">
-            <img src="static.wixstatic.com/media/f82aa6_9c503fe57f31445fa4fc0f91ffa7c14e_mv2.jpg/v1/fit/w_960,h_641,q_90,enc_avif,quality_auto/f82aa6_9c503fe57f31445fa4fc0f91ffa7c14e_mv2.jpg" alt="Playtronica touch sensors">
-            <span class="tech-label">Playtronica sensors</span>
-          </div>
-          <div class="tech-img-item">
-            <img src="static.wixstatic.com/media/f82aa6_efda82391c944ae283b182b32948f5be_mv2.jpg/v1/fit/w_960,h_641,q_90,enc_avif,quality_auto/f82aa6_efda82391c944ae283b182b32948f5be_mv2.jpg" alt="Meta Quest 3 VR headset">
-            <span class="tech-label">Meta Quest 3</span>
-          </div>
-        </div>
-        <div class="how-steps">
-          <h4>How it works</h4>
-          <ol>
-            <li>Browse the available equipment</li>
-            <li>Request what you need</li>
-            <li>Collect from Play Office or Share Portsmouth</li>
-            <li>Use it for your project</li>
-            <li>Return it for someone else</li>
-          </ol>
-        </div>
-      </div>
-    </div>
+    <a href="https://www.shareportsmouth.org.uk" target="_blank" rel="noopener" class="btn btn-white" style="margin-top:1.5rem;display:inline-block;">Browse the collection &rarr;</a>
   </div>
 </section>
 
 <!-- ─── WORKSHOPS ─── -->
-<section class="section section-tint" id="workshops">
+<section class="section" id="workshops">
   <div class="section-inner">
     <div class="section-label-row">
-      <span class="label">Workshops &amp; Education</span>
+      <span class="label">Workshops &amp; events</span>
       <span class="year">2025</span>
     </div>
-    <div class="feature-split">
-      <div class="feature-text">
-        <h2>Practical, hands-on sessions in creative technology</h2>
-        <p>Play Office delivers workshops for artists, young people, students and communities. Sessions explore creative technology through making, testing and experimentation &mdash; not just watching and listening.</p>
-        <div class="mini-stats">
-          <div class="mini-stat">
-            <strong>13</strong>
-            <span>Education events</span>
-          </div>
-          <div class="mini-stat">
-            <strong>356</strong>
-            <span>Attendees</span>
-          </div>
-          <div class="mini-stat">
-            <strong>&pound;16,200</strong>
-            <span>Provided free</span>
-          </div>
-        </div>
-        <div class="recent-workshops">
-          <h4>Recent workshops</h4>
-          <ul>
-            <li><a href="post/clay-photogrammetry-animation.html">Clay, photogrammetry and animation &mdash; a full creative pipeline</a></li>
-            <li><a href="post/touch-designer-projection-mapping.html">TouchDesigner and audio-reactive projection mapping</a></li>
-            <li><a href="post/open-brush-modelling-with-tom-ward.html">VR painting and 3D modelling with Open Brush</a></li>
-            <li><a href="post/reflecting-on-our-digital-sculpting-ar-workshop-with-livi-wilmore.html">Digital sculpting and AR with Livi Wilmore</a></li>
-            <li><a href="post/puppetry-xr-theatre-making-with-phoebe-hyder.html">Puppetry and XR theatre making with Phoebe Hyder</a></li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn btn-filled" style="margin-top:1.5rem;display:inline-block;">Contact us about a workshop</a>
+    <h2>A place for testing, making<br>and figuring things out.</h2>
+    <p style="font-size:0.9rem;color:var(--mid);max-width:540px;margin-top:0.75rem;line-height:1.85;">Workshops for people who want to try things, not just talk about them. Most are free, most are hands-on, and most end with something you&rsquo;ve made.</p>
+
+    <div class="noticeboard" role="list">
+      <div class="poster" role="listitem" tabindex="0" style="--rot:-2deg;">
+        <span class="poster-tag">Workshop</span>
+        <h3>VR<br>Sculpting</h3>
       </div>
-      <div class="feature-aside">
-        <h4 class="themes-label">Workshop themes</h4>
-        <div class="workshop-themes">
-          <span>VR sculpting</span>
-          <span>Projection mapping</span>
-          <span>Photogrammetry</span>
-          <span>3D scanning</span>
-          <span>Animation</span>
-          <span>XR storytelling</span>
-          <span>TouchDesigner</span>
-          <span>Immersive sound</span>
-          <span>Open Brush</span>
-          <span>Creative coding</span>
-          <span>Augmented reality</span>
-          <span>Heritage &amp; digital storytelling</span>
-        </div>
-        <img src="static.wixstatic.com/media/f82aa6_73d4eb27eaac4e4b99cabda3749e6139_mv2.jpg/v1/fit/w_960,h_641,q_90,enc_avif,quality_auto/f82aa6_73d4eb27eaac4e4b99cabda3749e6139_mv2.jpg" alt="Workshop at Play Office" style="width:100%;display:block;margin-top:1.5rem;" loading="lazy">
+      <div class="poster" role="listitem" tabindex="0" style="--rot:1.2deg;">
+        <span class="poster-tag">Workshop</span>
+        <h3>Projection<br>Mapping</h3>
+      </div>
+      <div class="poster" role="listitem" tabindex="0" style="--rot:-0.8deg;">
+        <span class="poster-tag">Workshop</span>
+        <h3>Photogrammetry</h3>
+      </div>
+      <div class="poster" role="listitem" tabindex="0" style="--rot:1.8deg;">
+        <span class="poster-tag">Workshop</span>
+        <h3>Animation</h3>
+      </div>
+      <div class="poster" role="listitem" tabindex="0" style="--rot:-1.5deg;">
+        <span class="poster-tag">Workshop</span>
+        <h3>XR<br>Storytelling</h3>
+      </div>
+      <div class="poster" role="listitem" tabindex="0" style="--rot:0.7deg;">
+        <span class="poster-tag">Workshop</span>
+        <h3>Immersive<br>Sound</h3>
+      </div>
+      <div class="poster" role="listitem" tabindex="0" style="--rot:-1.2deg;">
+        <span class="poster-tag">Workshop</span>
+        <h3>TouchDesigner</h3>
+      </div>
+      <div class="poster" role="listitem" tabindex="0" style="--rot:2.2deg;">
+        <span class="poster-tag">Workshop</span>
+        <h3>Creative<br>Coding</h3>
+      </div>
+    </div>
+
+    <p class="notice-data">356 education attendees across 13 events &mdash; &pound;16,200 equivalent workshop value provided free to the public.</p>
+    <div class="btn-row">
+      <a href="events.html" class="btn btn-filled">See upcoming events</a>
+      <a href="blog.html" class="btn">Read workshop write-ups</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESONATE ─── -->
+<section class="section section-dark" id="resonate">
+  <div class="section-inner">
+    <div class="section-label-row">
+      <span class="label">Artist development</span>
+      <span class="year">2023&ndash;2025</span>
+    </div>
+    <blockquote class="resonate-quote">
+      &ldquo;Resonate has given me the opportunity to elevate my practice beyond one medium &mdash; essentially giving me the key to a door I didn&rsquo;t know could open.&rdquo;
+    </blockquote>
+    <p class="dark-body" style="max-width:580px;margin-bottom:1.75rem;">Resonate is Play Office&rsquo;s artist development programme for artists experimenting with immersive media, XR, digital storytelling and new forms of public engagement. It provides paid development time, technical support, mentorship and international exhibition opportunities.</p>
+    <div class="resonate-stats">
+      <div class="r-stat">
+        <strong>12</strong>
+        <span>artist alumni</span>
+      </div>
+      <div class="r-stat">
+        <strong>&pound;30,000</strong>
+        <span>paid in artist fees</span>
+      </div>
+      <div class="r-stat">
+        <strong>5</strong>
+        <span>countries reached</span>
+      </div>
+    </div>
+    <a href="impact.html" class="btn btn-white" style="margin-top:2rem;display:inline-block;">See the full impact &rarr;</a>
+  </div>
+</section>
+
+<!-- ─── IMPACT NUMBERS ─── -->
+<section class="section impact-poster" id="numbers">
+  <div class="section-inner">
+    <div class="section-label-row">
+      <span class="label">By the numbers</span>
+      <span class="year">2023&ndash;2025</span>
+    </div>
+    <h2 class="poster-title">Some numbers from the first phase</h2>
+    <div class="poster-numbers">
+      <div class="poster-num">
+        <span class="p-num">40</span>
+        <span class="p-label">artists engaged</span>
+      </div>
+      <div class="poster-num">
+        <span class="p-num">2,996</span>
+        <span class="p-label">project participants</span>
+      </div>
+      <div class="poster-num">
+        <span class="p-num">3,472</span>
+        <span class="p-label">exhibition visitors</span>
+      </div>
+      <div class="poster-num">
+        <span class="p-num">&pound;16,200</span>
+        <span class="p-label">free workshop value</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── RESONATE / ARTIST DEVELOPMENT ─── -->
-<section class="section section-dark" id="artist-development">
+<!-- ─── RECENT ACTIVITY ─── -->
+<section class="section section-tint" id="activity">
   <div class="section-inner">
     <div class="section-label-row">
-      <span class="label">Artist Development &mdash; Resonate</span>
+      <span class="label">Recent activity</span>
       <span class="year">2025</span>
     </div>
-    <div class="feature-split feature-split-reverse">
-      <div class="feature-text">
-        <h2>Supporting artists to make new work with technology</h2>
-        <p>Resonate is Play Office's artist development programme for artists experimenting with immersive media, XR, digital storytelling and new forms of public engagement. The programme combines mentoring, peer support, practical access to equipment and space, commissioning, public outcomes and international connection.</p>
-        <div class="mini-stats mini-stats-light">
-          <div class="mini-stat">
-            <strong>12</strong>
-            <span>Artist alumni</span>
-          </div>
-          <div class="mini-stat">
-            <strong>&pound;30,000</strong>
-            <span>Paid in artist fees</span>
-          </div>
-          <div class="mini-stat">
-            <strong>5</strong>
-            <span>Countries toured</span>
-          </div>
+    <div class="archive-grid">
+      <a class="archive-main" href="post/in-touch-in-ruin-aspex.html">
+        <div class="archive-main-img">
+          <img src="static.wixstatic.com/media/f82aa6_12b858c923d842fcbffe831150103fd9_mv2.jpg/v1/fit/w_960,h_641,q_90,enc_avif,quality_auto/f82aa6_12b858c923d842fcbffe831150103fd9_mv2.jpg" alt="In Touch, In Ruin exhibition at Aspex Portsmouth" loading="lazy">
         </div>
-        <p class="outcome-bar">By the end of Resonate&nbsp;II, all tracked artist-development indicators had reached the maximum rating.</p>
-        <blockquote class="pull-quote">&ldquo;Resonate has given me the opportunity to elevate my practice beyond one medium &mdash; essentially giving me the key to a door I didn&rsquo;t know could open.&rdquo;<cite>&mdash; Resonate artist</cite></blockquote>
-        <a href="post/resonate-ii-hannah-mae-buckingham.html" class="btn btn-white" style="margin-top:1.5rem;display:inline-block;">Read about Resonate</a>
-      </div>
-      <div class="feature-aside">
-        <div class="artist-row">
-          <div class="artist-card">
-            <img src="static.wixstatic.com/media/f82aa6_faea7e91d53446b9ad80659d438f1bb9_mv2.jpg/v1/fit/w_960,h_638,q_90,enc_avif,quality_auto/f82aa6_faea7e91d53446b9ad80659d438f1bb9_mv2.jpg" alt="Harry Payne">
-            <span class="artist-name">Harry Payne</span>
-          </div>
-          <div class="artist-card">
-            <img src="static.wixstatic.com/media/f82aa6_18c7b54962ca430a8a01327b9d63026f_mv2.jpg/v1/fit/w_960,h_641,q_90,enc_avif,quality_auto/f82aa6_18c7b54962ca430a8a01327b9d63026f_mv2.jpg" alt="Hannah Mae Buckingham">
-            <span class="artist-name">Hannah Mae Buckingham</span>
-          </div>
-          <div class="artist-card">
-            <img src="static.wixstatic.com/media/f82aa6_2a057a96069d4638ba7c9a9cb2592e12_mv2.jpg/v1/fit/w_960,h_641,q_90,enc_avif,quality_auto/f82aa6_2a057a96069d4638ba7c9a9cb2592e12_mv2.jpg" alt="James Wylie">
-            <span class="artist-name">James Wylie</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── RECENT WORK ─── -->
-<section class="section" id="blog">
-  <div class="section-inner">
-    <div class="section-label-row">
-      <span class="label">Recent work</span>
-      <span class="year">2025</span>
-    </div>
-    <div class="card-grid">
-      <a class="card" href="post/resonate-ii-hannah-mae-buckingham.html">
-        <img class="card-img" src="static.wixstatic.com/media/f82aa6_7c6e9d2d17da4e2c8f7c9008e2af8f11_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_7c6e9d2d17da4e2c8f7c9008e2af8f11_mv2.jpg" alt="Resonate ii Hannah Mae Buckingham" loading="lazy">
-        <p class="card-tag">Artist Development</p>
-        <p class="card-title">Resonate (ii) &mdash; Hannah Mae Buckingham</p>
-        <p class="card-desc">Artist Hannah Mae Buckingham reflects on her process ahead of the exhibition In Touch, In Ruin at Aspex Portsmouth.</p>
+        <span class="archive-tag">Exhibition</span>
+        <h3>In Touch, In Ruin</h3>
+        <p>Resonate&nbsp;II artists at Aspex Portsmouth &mdash; Hannah Mae Buckingham, Harry Payne, James Wylie.</p>
       </a>
-      <a class="card" href="post/puppetry-xr-theatre-making-with-phoebe-hyder.html">
-        <img class="card-img" src="static.wixstatic.com/media/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg/v1/fill/w_324,h_323,fp_0.50_0.50,q_90/f82aa6_b1235d56c2fa4e31af5ee0adab47520f_mv2.jpg" alt="Puppetry XR Theatre Making" loading="lazy">
-        <p class="card-tag">Workshop</p>
-        <p class="card-title">Puppetry and XR theatre making with Phoebe Hyder</p>
-        <p class="card-desc">A hands-on session blending traditional puppetry craft with XR technologies in a collaborative theatre-making context.</p>
-      </a>
-      <a class="card" href="post/clay-photogrammetry-animation.html">
-        <img class="card-img" src="static.wixstatic.com/media/f82aa6_79a43b4cb28643b8bad2ab23209699f7_mv2.jpg/v1/fill/w_323,h_323,fp_0.50_0.50,q_90/f82aa6_79a43b4cb28643b8bad2ab23209699f7_mv2.jpg" alt="Clay Photogrammetry Animation" loading="lazy">
-        <p class="card-tag">Workshop</p>
-        <p class="card-title">Clay to photogrammetry to animation &mdash; a full creative pipeline</p>
-        <p class="card-desc">How participants moved from clay sculpture to 3D scanning to animated immersive objects in a single workshop day.</p>
-      </a>
+      <div class="archive-recent">
+        <a class="archive-item" href="post/past-makes-future-2025-1.html">
+          <span class="archive-tag">Conference</span>
+          <h4>Past Makes Future 2025</h4>
+          <p>An international micro-conference at Portsmouth Guildhall exploring art, heritage and technology.</p>
+        </a>
+        <a class="archive-item" href="post/altercare-a-worldbuilding-workshop-with-beirut-art-centre.html">
+          <span class="archive-tag">Exchange</span>
+          <h4>AlterCare &mdash; Beirut Art Centre</h4>
+          <p>XR worldbuilding workshop with local artists in Beirut.</p>
+        </a>
+        <a class="archive-item" href="post/clay-photogrammetry-animation.html">
+          <span class="archive-tag">Workshop</span>
+          <h4>Clay, Photogrammetry &amp; Animation</h4>
+          <p>Full pipeline: clay sculpt to 3D scan to WebXR, led by Tom Ward.</p>
+        </a>
+      </div>
     </div>
-    <p style="text-align:center;margin-top:2.5rem;"><a href="blog.html" class="btn">View all posts</a></p>
-  </div>
-</section>
-
-<!-- ─── WHO IS IT FOR ─── -->
-<section class="section section-tint" id="who-for">
-  <div class="section-inner">
-    <div class="section-label-row">
-      <span class="label">Who Play Office is for</span>
-      <span class="year">2025</span>
-    </div>
-    <div class="audience-grid">
-      <div class="audience-card">
-        <h3>Artists and creatives</h3>
-        <p>Borrow equipment, access mentoring, test new ideas and develop new work using immersive media, XR and digital tools.</p>
-      </div>
-      <div class="audience-card">
-        <h3>Community groups</h3>
-        <p>Collaborate on projects exploring memory, place, local heritage and digital storytelling in Portsmouth and beyond.</p>
-      </div>
-      <div class="audience-card">
-        <h3>Students and early-career makers</h3>
-        <p>Learn creative technology through practical workshops, public sessions and peer support at no cost to you.</p>
-      </div>
-      <div class="audience-card">
-        <h3>Cultural organisations</h3>
-        <p>Partner with us on exhibitions, public programmes, commissions and artist development opportunities.</p>
-      </div>
-      <div class="audience-card">
-        <h3>Funders and researchers</h3>
-        <p>Support accessible models for creative technology, civic culture and community-led digital practice.</p>
-      </div>
+    <div style="margin-top:1.75rem;">
+      <a href="blog.html" class="btn">All posts &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- ─── TESTIMONIALS ─── -->
-<section class="section" id="testimonials">
+<!-- ─── VISIT / CONTACT ─── -->
+<section class="section" id="visit">
   <div class="section-inner">
     <div class="section-label-row">
-      <span class="label">What people say</span>
+      <span class="label">Find us</span>
       <span class="year">2025</span>
     </div>
-    <div class="testimonials-grid">
-      <blockquote class="testimonial testimonial-large">
-        <p>&ldquo;The Play Office is a much needed resource for the city of Portsmouth. It is a first step towards developing a capacity for more complex creative tech orientated arts practices in the city. Thomas has brought something unique to life and ignited a passion for creative technology and arts practices among the local community. Long live Play Office!&rdquo;</p>
-        <cite>&mdash; Cultural sector partner</cite>
-      </blockquote>
-      <blockquote class="testimonial">
-        <p>&ldquo;Resonate has given me the opportunity to elevate my practice beyond one medium &mdash; essentially giving me the key to a door I didn&rsquo;t know could open.&rdquo;</p>
-        <cite>&mdash; Resonate artist</cite>
-      </blockquote>
-      <blockquote class="testimonial">
-        <p>&ldquo;Most if not all of my recent opportunities are a direct result of my participation in Resonate.&rdquo;</p>
-        <cite>&mdash; Resonate artist</cite>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PARTNERS ─── -->
-<div class="partners" id="partners">
-  <div class="partners-inner">
-    <div class="section-label-row" style="border-top-color:rgba(255,255,255,0.15);margin-bottom:1rem;">
-      <span class="label" style="color:rgba(255,255,255,0.65);">Partners &amp; funders</span>
-    </div>
-    <p class="partners-context">Play Office works with local, national and international partners to make creative technology more accessible. Our work connects artists, communities, universities, funders, heritage organisations and cultural venues.</p>
-    <div class="partners-grid">
-      <div class="partner-cell"><img src="static.wixstatic.com/media/f82aa6_8bc12d767b604f91a85c731576cd547e_mv2.png/v1/fill/w_100,h_32,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/images.png" alt="Arts Council England"></div>
-      <div class="partner-cell"><img src="static.wixstatic.com/media/f82aa6_3bb18d271a9a4e28b27b3658cb012fd0_mv2.png/v1/fill/w_125,h_31,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Portsmouth-Creates-Logo-500x125.png" alt="Portsmouth Creates"></div>
-      <div class="partner-cell"><img src="static.wixstatic.com/media/f82aa6_b43984f2f0f04d888f34fe07d2b12762_mv2.png/v1/fill/w_70,h_39,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/portsmouth-city-council-vector-logo-xs.png" alt="Portsmouth City Council"></div>
-      <div class="partner-cell partner-text">British Council</div>
-      <div class="partner-cell partner-text">University of Portsmouth</div>
-      <div class="partner-cell partner-text">Share Portsmouth</div>
-      <div class="partner-cell"><img src="static.wixstatic.com/media/f82aa6_5419833cf23745fa9fe6c93652fca0df_mv2.png/v1/fill/w_49,h_38,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/logopmf.png" alt="Past Makes Future"></div>
-      <div class="partner-cell"><img src="static.wixstatic.com/media/f82aa6_a33d9b6097294ffc9e760c915bdc7212_mv2.png/v1/fill/w_49,h_25,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/aspex_logo.png" alt="Aspex Portsmouth"></div>
-      <div class="partner-cell partner-text">Portsmouth Historic Quarter</div>
-      <div class="partner-cell partner-text">The Mary Rose</div>
-      <div class="partner-cell partner-text">Bored Peach Club</div>
-      <div class="partner-cell partner-text">d&amp;b Audiotechnik</div>
-    </div>
-  </div>
-</div>
-
-<!-- ─── CONTACT ─── -->
-<section class="section section-tint" id="contact">
-  <div class="section-inner">
-    <div class="section-label-row">
-      <span class="label">Get involved</span>
-      <span class="year">2025</span>
-    </div>
-    <p class="contact-intro">Whether you are an artist, community group, educator, funder or cultural partner, we would like to hear from you.</p>
-    <div class="involve-grid">
-      <div class="involve-card">
-        <h4>Artists</h4>
-        <p>Talk to us about equipment, mentoring, workshops or developing new work with immersive media and creative technology.</p>
-        <a href="mailto:info@thomas-buckley.com" class="btn btn-filled">Email us</a>
+    <div class="visit-grid">
+      <div class="visit-left">
+        <h2>Come and find us.</h2>
+        <p style="font-size:0.93rem;color:var(--mid);line-height:1.85;margin:1.1rem 0 1.5rem;">Play Office is based at The Old Pay Office in Portsmouth Historic Quarter. For equipment loans, workshops, artist development or partnership enquiries, get in touch.</p>
+        <address style="font-style:normal;font-size:0.88rem;color:var(--mid);line-height:2.2;margin-bottom:1.5rem;">
+          The Old Pay Office<br>
+          Portsmouth Historic Quarter<br>
+          Victory Gate, HM Naval Base<br>
+          Portsea, Portsmouth PO1 3LJ
+        </address>
+        <p style="font-size:0.84rem;color:var(--mid);margin-bottom:1.75rem;">Step-free accessible. <a href="accessibility.html" style="color:var(--navy);">Accessibility information &rarr;</a></p>
+        <a href="mailto:Thomas@thomas-buckley.com" class="btn btn-filled">Email Thomas &rarr;</a>
       </div>
-      <div class="involve-card">
-        <h4>Community groups</h4>
-        <p>Work with us on memory, heritage, storytelling and creative technology projects in Portsmouth and beyond.</p>
-        <a href="mailto:info@thomas-buckley.com" class="btn btn-filled">Email us</a>
-      </div>
-      <div class="involve-card">
-        <h4>Partners and funders</h4>
-        <p>Contact us about collaborations, commissions, research and public programmes. We welcome partnership enquiries.</p>
-        <a href="mailto:info@thomas-buckley.com" class="btn btn-filled">Email us</a>
-      </div>
-      <div class="involve-card">
-        <h4>Visit</h4>
-        <address>The Old Pay Office<br>Portsmouth Historic Quarter<br>Victory Gate, HM Naval Base<br>Portsea, Portsmouth PO1 3LJ</address>
-        <p style="margin-top:0.75rem;">Step-free accessible. Email to arrange a visit or ask about upcoming open sessions.</p>
-        <a href="mailto:Thomas@thomas-buckley.com" class="btn btn-filled" style="margin-top:0.75rem;display:inline-block;">Email to visit</a>
+      <div class="visit-right">
+        <h3 style="font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;">Supported by</h3>
+        <div class="partners-grid" style="grid-template-columns:repeat(3,1fr);background:transparent;">
+          <div class="partner-cell">
+            <img src="static.wixstatic.com/media/f82aa6_8bc12d767b604f91a85c731576cd547e_mv2.png/v1/fill/w_100,h_32,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/images.png" alt="Arts Council England" loading="lazy" style="filter:brightness(0);opacity:0.5;max-height:32px;object-fit:contain;">
+          </div>
+          <div class="partner-cell">
+            <img src="static.wixstatic.com/media/f82aa6_3bb18d271a9a4e28b27b3658cb012fd0_mv2.png/v1/fill/w_125,h_31,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Portsmouth-Creates-Logo-500x125.png" alt="Portsmouth Creates" loading="lazy" style="filter:brightness(0);opacity:0.5;max-height:32px;object-fit:contain;">
+          </div>
+          <div class="partner-cell">
+            <img src="static.wixstatic.com/media/f82aa6_b43984f2f0f04d888f34fe07d2b12762_mv2.png/v1/fill/w_70,h_39,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/portsmouth-city-council-vector-logo-xs.png" alt="Portsmouth City Council" loading="lazy" style="filter:brightness(0);opacity:0.5;max-height:40px;object-fit:contain;">
+          </div>
+          <div class="partner-cell">
+            <img src="static.wixstatic.com/media/f82aa6_5419833cf23745fa9fe6c93652fca0df_mv2.png/v1/fill/w_49,h_38,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/logopmf.png" alt="Past Makes Future" loading="lazy" style="filter:brightness(0);opacity:0.5;max-height:40px;object-fit:contain;">
+          </div>
+          <div class="partner-cell">
+            <img src="static.wixstatic.com/media/f82aa6_a33d9b6097294ffc9e760c915bdc7212_mv2.png/v1/fill/w_49,h_25,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/aspex_logo.png" alt="Aspex Portsmouth" loading="lazy" style="filter:brightness(0);opacity:0.5;max-height:28px;object-fit:contain;">
+          </div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--light);line-height:1.8;margin-top:1.75rem;">Also supported by <a href="https://thomas-buckley.com" target="_blank" rel="noopener" style="color:var(--navy);">Thomas Buckley</a> and the <a href="https://sustainableconservationtrust.com" target="_blank" rel="noopener" style="color:var(--navy);">Sustainable Conservation Trust</a>.</p>
       </div>
     </div>
-    <p class="contact-direct">Thomas Buckley &mdash; <a href="mailto:Thomas@thomas-buckley.com">Thomas@thomas-buckley.com</a> &mdash; <a href="https://thomas-buckley.com" target="_blank" rel="noopener">thomas-buckley.com</a> &mdash; <a href="https://sustainableconservationtrust.com" target="_blank" rel="noopener">Sustainable Conservation Trust</a></p>
   </div>
 </section>
 
@@ -458,10 +319,11 @@
   <div class="footer-links-row">
     <div class="footer-nav">
       <a href="index.html">Home</a>
-      <a href="#equipment">Borrow equipment</a>
-      <a href="#workshops">Workshops</a>
-      <a href="#artist-development">Artist development</a>
+      <a href="index.html#equipment">Borrow equipment</a>
+      <a href="index.html#workshops">Workshops</a>
+      <a href="index.html#resonate">Resonate</a>
       <a href="impact.html">Impact</a>
+      <a href="events.html">Events</a>
       <a href="blog.html">Blog</a>
       <a href="gallery.html">Gallery</a>
     </div>
@@ -474,6 +336,96 @@
     <div class="footer-wordmark">P&#x2736;AY OFFICE</div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero = document.querySelector('.hero-new');
+  var W, H, pts = [], t = 0, mx = -9999, my = -9999;
+
+  function setup() {
+    W = canvas.width = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+    pts = [];
+    var gap = 40;
+    var cols = Math.ceil(W / gap);
+    var rows = Math.ceil(H / gap);
+    for (var i = 0; i <= cols; i++) {
+      for (var j = 0; j <= rows; j++) {
+        if (Math.random() < 0.48) {
+          pts.push({
+            ox: (i + (Math.random() - 0.5) * 0.65) * gap,
+            oy: (j + (Math.random() - 0.5) * 0.65) * gap,
+            r: Math.random() * 1.1 + 0.4,
+            sp: Math.random() * 0.011 + 0.005,
+            ph: Math.random() * 6.28,
+            ln: Math.random() > 0.74
+          });
+        }
+      }
+    }
+  }
+
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) t += 0.32;
+
+    for (var i = 0; i < pts.length; i++) {
+      var p = pts[i];
+      var x = p.ox + (reduced ? 0 : Math.sin(t * p.sp + p.ph) * 8);
+      var y = p.oy + (reduced ? 0 : Math.cos(t * p.sp * 0.72 + p.ph) * 5);
+
+      if (!reduced && mx > -999) {
+        var dx = x - mx, dy = y - my;
+        var d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 85 && d > 0) {
+          var f = (85 - d) / 85;
+          x += (dx / d) * f * 18;
+          y += (dy / d) * f * 18;
+        }
+      }
+
+      if (p.ln) {
+        ctx.strokeStyle = 'rgba(247,247,247,0.09)';
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(x - 14, y);
+        ctx.lineTo(x + 14, y);
+        ctx.stroke();
+      } else {
+        ctx.fillStyle = 'rgba(247,247,247,0.22)';
+        ctx.beginPath();
+        ctx.arc(x, y, p.r, 0, 6.28);
+        ctx.fill();
+      }
+    }
+
+    if (!reduced) requestAnimationFrame(tick);
+  }
+
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      setup();
+      if (reduced) tick();
+    }, 180);
+  });
+
+  hero.addEventListener('mousemove', function (e) {
+    var r = canvas.getBoundingClientRect();
+    mx = e.clientX - r.left;
+    my = e.clientY - r.top;
+  });
+  hero.addEventListener('mouseleave', function () { mx = my = -9999; });
+
+  setup();
+  requestAnimationFrame(tick);
+})();
+</script>
 
 </body>
 </html>
